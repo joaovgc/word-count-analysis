@@ -1,7 +1,5 @@
 from collections import Counter
 
-from tkinter import *
-
 txt = open("ward.txt", "r")
 splitTxt = txt.read().split()
 txt.close()
@@ -30,18 +28,7 @@ def listToString(lista):
 		string += (str(i)+ "\n")
 	return string
 
-f = getFrequencyList(splitTxt)[:3000]
-root = Tk()
-# Começo do loop.; 
+txt = open("frequency.txt", "w")
+txt.write(str(getFrequencyList(splitTxt)))
+txt.close()
 
-Lb1 = Listbox(root, height=45, width=15, font=("", 14))
-
-i =1
-for w in f:
-	Lb1.insert(i, w)
-	i += 1
-	
-Lb1.pack()
-
-# Fim do loop;
-root.mainloop()

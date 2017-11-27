@@ -1,6 +1,6 @@
 from collections import Counter
 
-txt = open("ward.txt", "r")
+txt = open("sample.txt", "r")
 splitTxt = txt.read().split()
 txt.close()
 
@@ -29,6 +29,9 @@ def listToString(lista):
 	return string
 
 txt = open("frequency.txt", "w")
-txt.write(str(getFrequencyList(splitTxt)))
+freqString = ""
+for w in getFrequencyList(splitTxt):
+	freqString += str(w) + "\n"
+txt.write(freqString)
 txt.close()
 
